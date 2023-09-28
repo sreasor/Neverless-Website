@@ -1,0 +1,24 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Cinzel Decorative', cursive;
+}
+.About
+{
+	min-height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('Images/About.jpg');
+	background-position: center;
+	background-size: cover;
+	position: relative;
+}
+.text-box
+{
+	margin-left: 250px;
+	margin-right: 250px;
+	padding-top: 250px;
+	padding-bottom: 250px;
+	color: #FFFFFF;
+	font-size: 30px;
+	text-align: center;
+}

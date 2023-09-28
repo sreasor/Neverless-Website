@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta name="viewport" content="with=device-width, initial scale=1.0">
+	<title>Contact</title>
+	<link rel="stylesheet" href="style5.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Contact Form - PHP/MySQL Demo Code</title>
+</head>
+
+<body>
+	<fieldset>
+
+<section class="Contact">
+	<div class="headingTitle">
+		<h1>Email: neverlessmakesmusic@gmail.com</h1>
+	</div>
+	<div class="links">
+		<ul>
+			<li><a style="text-decoration: none" href="https://www.facebook.com/NeverlessMakesMusic/"><i class="fab fa-facebook fa-5x"></i></a></li>
+			<li><a style="text-decoration: none" href="https://www.instagram.com/neverlessband/?hl=en"><i class="fab fa-instagram fa-5x"></i></a></li>
+		</ul>
+	</div>
+
+	<h2>Join Our Email List:</h2>
+	<form id="myForm" method="post" action="contact.php">
+		<p>
+			<label for="firstname">First Name:</label>
+			<input type="text" name="txtFName" id="txtFName">
+		</p>
+		<p>
+			<label for="lastname">Last Name:</label>
+			<input type="text" name="txtLName" id="txtLName">
+		</p>
+		<p>
+			<label for="email">Email:</label>
+			<input type="text" name="txtEmail" id="txtEmail">
+		</p>
+		<p>&nbsp;</p>
+		<div class = "Submit">
+		    <p>
+			    <input type="submit" name="Submit" id="Submit" value="Submit">
+		    </p>
+		</div>
+	</form>
+	
+	<div id="message"></div>
+</section>
+
+<script>
+// I am unaware of how this works exactly, but it gets rid of the default form submission and uses AJAX so that when submit is pressed, the form fields dissapear and a messsage is displayed.
+console.log("JavaScript running");
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("myForm");
+    const messageDiv = document.getElementById("message");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        // Perform the form submission using AJAX
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Log the server response for debugging purposes
+            console.log("Server Response:", data);
+
+            if (data.trim() === "We will email you soon!") {
+                // Hide the form and error message, and display the success message
+                form.style.display = "none";
+                messageDiv.innerHTML = "<p>We will email you soon.</p>";
+            } else {
+                // Display an error message
+                messageDiv.innerHTML = '<p style="padding-bottom: 40px;">Invalid Email: Please try again.</p>';
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    });
+});
+
+</script>
+
+</fieldset>
+</body>
+</html>

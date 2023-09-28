@@ -1,0 +1,77 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Cinzel Decorative', cursive;
+}
+.Contact
+{
+	min-height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('Images/RRU.jpg');
+	background-position: center;
+	background-size: cover;
+	position: relative;
+}
+.headingTitle
+{
+	text-align: center;
+	padding-top: 150px;
+	padding-bottom: 50px;
+	color: #ffffff;
+	font-size: 30px;
+}
+
+.links
+{
+	text-align: center;
+	padding-top: 150px;
+}
+
+.fa-facebook
+{
+	color: #fff;
+	padding: 50px;
+}
+
+.fa-instagram
+{
+	size: 300%;
+	color: #fff;
+	padding: 50px;
+}
+
+.Contact ul li
+{
+	size: 300%;
+	list-style: none;
+	display: inline;
+	padding-top: 200px;
+}
+
+h2
+{
+	color: #fff;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 25px;
+	font-size: 25px;
+}
+
+p
+{
+	color: #fff;
+	text-align: center;
+	padding: 5px;
+}
+.Submit
+{
+    padding-bottom: 40px;
+}
+
+#message 
+{
+    color: #fff;
+    padding: 10px; /* Padding around the message */
+    text-align: center; /* Center-align the message text */
+    font-weight: bold; /* Make the text bold */
+}
